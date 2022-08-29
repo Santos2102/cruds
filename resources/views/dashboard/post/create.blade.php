@@ -15,40 +15,56 @@
         <br>
     </header>
     <main>
-      
-            <form action="{{route('post.store')}}" method="post">
-                @csrf 
-                <div class="container">
-                <section class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <label for="">Titulo</label>
-                        <input type="text" name="Titulo" class="input" placeholder="Ingrese un Titulo">
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <label for="">Url Corta</label>
-                        <input type="text" name="slug" class="input" placeholder="Ingrese una URL corta">
-                    </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <label for="">Contenido</label>
-                        <textarea name="content" class="textarea" placeholder="Ingrese un Contenido"></textarea>
-                    </div>
-
-                    <div class="col-xs-12 col-sm-12 col-md-12">
-                        <label for="">Descripcion</label>
-                        <textarea name="Description" class="textarea" placeholder="Ingrese una Descripcion"></textarea>
-                    </div>
-                    
-                    <div class="col-xs-12 col-sm-12 col-md-12 centrar">
-                        <button type="submit" class="button ">Enviar</button>
-                    </div>
-                </section>
-                </div>  
-            </form>
         
-      
+    <div class="container">
+        <form action="{{route('post.store')}}" method="post">
+            @csrf 
+            
+            <!-- @if($errors->any())
+                @foreach($errors->all() as $error)
+                    <div class="alert alert-danger">
+                        {{$error}} </div>
+                @endforeach
+            @endif -->
+            <section class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="">Titulo</label>
+                    <input type="text" name="Titulo" class="input" placeholder="Ingrese un Titulo">
+                    @error('Titulo')
+                    <small class="text-danger">{{$message}}</small>
+                    @enderror
+                    
+                </div>
+                
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="">Url Corta</label>
+                    <input type="text" name="slug" class="input" placeholder="Ingrese una URL corta">
+                    @error('slug')
+                    <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="">Contenido</label>
+                    <textarea name="content" class="textarea" placeholder="Ingrese un Contenido"></textarea>
+                    @error('content')
+                    <small class="text-danger">{{$message}}</small>
+                    @enderror
+                </div>
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <label for="">Descripcion</label>
+                    <textarea name="Description" class="textarea" placeholder="Ingrese una Descripcion"></textarea>
+                </div>
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 centrar">
+                    <button type="submit" class="button ">Enviar</button>
+                </div>
+            </section>
+             
+        </form>
+        </div> 
     </main>
-    
 </body>
 </html>
