@@ -44,7 +44,8 @@ class PostController extends Controller
         //
             echo"El titulo trae ".$request->Titulo;
             Post::create($request->validated());
-            
+            return back()->with('status','Muchas gracuas tu post fue creado con éxito');
+            //return redirect('post.create')->with('status','Post created');
     }
 
     /**
