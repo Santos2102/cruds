@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashBoard\PostController;
+use App\Http\Controllers\DashBoard\CategoriesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/', function () {
 });
 
 Route::resource('post', PostController::class);
+Route::resource('categories', CategoriesController::class);
