@@ -10,6 +10,7 @@
 </head>
 <body>
 <header class="centrar">
+@include('dashboard.partials.nav-header-main')
         <h1>Ingreso de Categories</h1>
         <br>
         <br>
@@ -19,18 +20,7 @@
         
     <div class="container">
         <form action="{{route('categories.store')}}" method="post">
-            @csrf 
-            @if(session('status'))
-                <div class="alert alert-success">
-                    {{session('status')}}
-                </div>
-            @endif
-            <!-- @if($errors->any())
-                @foreach($errors->all() as $error)
-                    <div class="alert alert-danger">
-                        {{$error}} </div>
-                @endforeach
-            @endif -->
+        
             <section class="row">
                 <div class="col-xs-12 col-sm-12 col-md-12">
                     <label for="">Titulo</label>

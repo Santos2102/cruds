@@ -1,6 +1,6 @@
 *{
-    background-color: black;
-    color: #FFFFFF;
+    background-color: grey;
+    /* color: #FFFFFF; */
 }
 
 
@@ -47,4 +47,8 @@
 
 .centrar{
     text-align: center;
+}
+
+.color{
+    color:#FFFFFF;
 }
