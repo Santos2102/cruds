@@ -12,19 +12,18 @@
 </head>
 <body>
     <header class="centrar">
-    @include('dashboard.partials.nav-header-main')
-        <h1>Ingreso de Post</h1>
+        @include('dashboard.partials.nav-header-main')
+        <h1>Actualizar Post</h1>
         <br>
         <br>
     </header>
-    <main>
 
-        
-    <div class="container">
-        <form action="{{route('post.store')}}" method="post">
-           
-        @include('dashboard.partials._form')
-        </form>
+    <main>        
+        <div class="container">
+            <form action="{{route('post.update',$post->id)}}" method="post">
+                @method('PUT')
+                @include('dashboard.partials._form')
+            </form>
         </div> 
     </main>
 </body>
